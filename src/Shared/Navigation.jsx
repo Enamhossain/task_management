@@ -64,7 +64,7 @@ const Navigation = () => {
                   Pricing
                 </Link>
                 <Link
-                  to="/"
+                  to="/dashboard"
                   className=" rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800"
                 >
                   Dashboard
@@ -90,10 +90,10 @@ const Navigation = () => {
                     }`}
                   >
                     <Link
-                      to="/SignIn"
+                      to="/SingIn"
                       className="rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800"
                     >
-                      Sign Up
+                      Sign in
                     </Link>
                     <Link
                       to="/Registertion"

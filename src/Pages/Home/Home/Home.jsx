@@ -1,13 +1,16 @@
 import React from 'react'
-import Navigation from '../../../Shared/Navigation'
 import Hero from '../../../Components/Hero'
-import Section from '../../../Components/Section'
+import ProjectSection from '../../../Components/ProjectSection'
+import PricingTable from '../../../Components/pricingPlans'
+import Testimonial from '../../../Components/Testomonial'
 
 const Home = () => {
   return (
     <div>
        <Hero/>
-       <Section/>
+       <ProjectSection/>
+       <PricingTable/>
+       <Testimonial/>
     </div>
   )
 }

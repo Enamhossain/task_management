@@ -6,7 +6,7 @@ const GradientWave = () => (
    
     <svg
       width="100%"
-      height="50%"
+      height="70%"
       id="svg"
       viewBox="0 0 1440 390"
       xmlns="http://www.w3.org/2000/svg"

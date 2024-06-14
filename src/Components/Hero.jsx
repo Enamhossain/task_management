@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { FaUserAlt } from "react-icons/fa";
-
 const Hero = () => {
   return (
-    <div className="min-h-[600px] sm:px-2 px-3 mx-3 max-h-[800px] py-20 rounded-t-2xl bg-[#FEFDFC]">
-      <div className="flex justify-center flex-col">
+    <div className="min-h-[600px] mx-auto   max-h-[800px] py-20 rounded-t-2xl mb-[20%] ">
+
+      <div className="flex justify-center flex-col bg-[#FEFDFC]">
         {/* Announcement line */}
         <div className="bg-[#FEFDFC] mx-auto max-w-[250px] pr-3 pl-1 py-[6px] rounded-full gap-2 flex items-center text-black">
           <span className="bg-[#a4f377] sm:px-3 px-2 sm:py-1 py-[3px] sm:text-base text-sm rounded-full">
@@ -41,6 +41,20 @@ const Hero = () => {
               </button>
             </div>
           </div>
+        </div>
+      </div>
+       
+      <div className="w-full  mx-auto mt-5 mb-5 md:w-2/3 lg:w-[45%] bg-orange-100 p-6 rounded-lg shadow-lg border border-orange-500">
+        <img
+          src="https://i.ibb.co/4ZLmrBs/9693829.jpg"
+          alt="Tasks Screenshot"
+          className="mb-4 rounded-lg shadow-md"
+        />
+        <div className="bg-green-100 p-4 rounded-lg shadow-md">
+          <h3 className="font-bold mb-2">Work Better Together</h3>
+          <p className="text-sm text-gray-700">
+            Tasks in MeisterTask act as a central communication hub for all related files, links and discussions. Don’t lose the thread email.
+          </p>
         </div>
       </div>
     </div>

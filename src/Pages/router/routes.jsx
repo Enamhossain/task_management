@@ -7,6 +7,10 @@ import Layout from "../../Layout/Layout";
 import Singin from "../Singin/Singin";
 import Singup from "../Singup/Singup";
 import Features from "../Features/Features";
+import DashboardLayout from "../../Layout/dashboardLayout";
+import Dashboard from "../Dashboard/Dashboard";
+import Tasks from "../Dashboard/Tasks";
+import PrivateRoutes from "./PrivateRotues";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +36,21 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path:"dashboard",
+    element:<PrivateRoutes><DashboardLayout/></PrivateRoutes>,
+    children:[
+      {
+        path:"dashboard",
+        element:<Dashboard/>
+      },
+      {
+        path:"Tasks",
+        element:<Tasks/>
+      }
+    ]
+  }
 ]);
 
 export default router;
