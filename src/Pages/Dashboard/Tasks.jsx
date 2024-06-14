@@ -17,7 +17,7 @@ const Tasks = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch("http://localhost:3000/tasks");
+        const response = await fetch("https://taskmange-server.onrender.com/tasks");
         const data = await response.json();
         setTasks(data);
       } catch (error) {
@@ -39,7 +39,7 @@ const Tasks = () => {
         status: 'To Do'
       };
 
-      const response = await axios.post('http://localhost:3000/tasks', formData, {
+      const response = await axios.post('https://taskmange-server.onrender.com/tasks', formData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -71,7 +71,7 @@ const Tasks = () => {
     setTasks(updatedTasks);
   
     try {
-      await axios.put(`http://localhost:3000/tasks/${taskId}`, { status }, {
+      await axios.put(`https://taskmange-server.onrender.com/tasks/${taskId}`, { status }, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -88,7 +88,7 @@ const Tasks = () => {
 
   const handleDelete = async (_id) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/tasks/${_id}`);
+      const response = await axios.delete(`https://taskmange-server.onrender.com/tasks/${_id}`);
       if (response.data.success) {
         setTasks(tasks.filter(task => task._id !== _id));
         console.log("Item deleted successfully!");
