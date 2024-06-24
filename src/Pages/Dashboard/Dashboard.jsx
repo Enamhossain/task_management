@@ -1,16 +1,15 @@
 // src/components/Dashboard.js
 import React, { useState, useEffect, useContext } from 'react';
 import { ToastContainer } from 'react-toastify';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Dashboard = () => {
-  const { logOut, user } = useContext(AuthContext);
+ 
   const [tasks, setTasks] = useState([]);
-
+console.log(tasks)
   useEffect(() => {
     // Fetch tasks from the API
-    fetch('http://localhost:3001/tasks')
+    fetch('https://taskmange-server.onrender.com/tasks')
       .then((response) => response.json())
       .then((data) => setTasks(data))
       .catch((error) => console.error('Error fetching tasks:', error));
@@ -20,6 +19,7 @@ const Dashboard = () => {
   const completedTasks = tasks.filter((task) => task.status === 'Completed').length;
   const inProgressTasks = tasks.filter((task) => task.status === 'In Progress').length;
   const toDoTasks = tasks.filter((task) => task.status === 'To Do').length;
+  console.log(completedTasks)
 
   const data = [
     { name: 'To Do', value: toDoTasks },
