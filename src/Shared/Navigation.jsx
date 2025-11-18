@@ -52,13 +52,13 @@ const Navigation = () => {
                   Home
                 </Link>
                 <Link
-                  to="/"
+                  to="/Features"
                   className=" rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800"
                 >
-                  Feature
+                  Features
                 </Link>
                 <Link
-                  to="/"
+                  to="/#pricing"
                   className=" rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800"
                 >
                   Pricing

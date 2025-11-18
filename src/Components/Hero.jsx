@@ -1,61 +1,120 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
-import { FaUserAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
+
 const Hero = () => {
   return (
-    <div className="min-h-[600px] mx-auto   max-h-[800px] py-20 rounded-t-2xl mb-[20%] ">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          {/* Announcement Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full mb-6"
+          >
+            <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              New
+            </span>
+            <span className="text-sm font-medium">Task Management Platform</span>
+          </motion.div>
 
-      <div className="flex justify-center flex-col bg-[#FEFDFC]">
-        {/* Announcement line */}
-        <div className="bg-[#FEFDFC] mx-auto max-w-[250px] pr-3 pl-1 py-[6px] rounded-full gap-2 flex items-center text-black">
-          <span className="bg-[#a4f377] sm:px-3 px-2 sm:py-1 py-[3px] sm:text-base text-sm rounded-full">
-            New
-          </span>
-          Task management 
-        </div>
-        {/* Banner Content */}
-        <div className="mt-10">
-          <h2 className="text-black lg:text-5xl md:text-4xl sm:text-3xl text-2xl max-w-[600px] mx-auto text-center font-extrabold">
-            Streamline Your Workflow Efficiently.
-          </h2>
-          <p className="lg:text-xl md:text-lg text-[#8896AB] mt-5 max-w-[600px] text-center mx-auto text-sm">
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight"
+          >
+            Streamline Your
+            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Workflow Efficiently
+            </span>
+          </motion.h1>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed"
+          >
             Experience the ultimate task management platform designed to boost
-            your teams productivity. Manage tasks, set priorities, and
+            your team's productivity. Manage tasks, set priorities, and
             collaborate seamlessly.
-          </p>
-          {/* Banner action */}
-          <div className="mt-5 flex md:flex-row max-w-[450px] mx-auto justify-center gap-2 flex-col">
-            <div className="md:ml-auto md:mr-0 lg:w-[55%] relative">
-              <FaUserAlt className="absolute mt-[10px] ml-2 text-gray-400" />
-              <input
-                placeholder="Enter your email"
-                className="pr-3 pl-8 rounded-lg w-full py-3"
-                type="text"
-                name=""
-                id=""
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          >
+            <Link
+              to="/Registertion"
+              className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 flex items-center gap-2"
+            >
+              Get Started Free
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              to="/Features"
+              className="bg-white text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-200"
+            >
+              Learn More
+            </Link>
+          </motion.div>
+
+          {/* Features List */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
+          >
+            {[
+              "Drag & Drop Task Management",
+              "Real-time Collaboration",
+              "Advanced Analytics"
+            ].map((feature, index) => (
+              <motion.div
+                key={feature}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 + index * 0.1 }}
+                className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-md"
+              >
+                <FaCheckCircle className="text-green-500 text-xl flex-shrink-0" />
+                <span className="text-gray-700 font-medium">{feature}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="https://i.ibb.co/4ZLmrBs/9693829.jpg"
+                alt="Task Management Dashboard"
+                className="w-full h-auto"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
-            <div className="md:mr-auto md:ml-0 lg:w-[45%]">
-              <button className="bg-[#b5d63b] sm:py-3 py-2 sm:text-base text-sm px-18 text-black rounded-lg h-full w-full">
-              Let’s Explore
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-       
-      <div className="w-full  mx-auto mt-5 mb-5 md:w-2/3 lg:w-[45%] bg-orange-100 p-6 rounded-lg shadow-lg border border-orange-500">
-        <img
-          src="https://i.ibb.co/4ZLmrBs/9693829.jpg"
-          alt="Tasks Screenshot"
-          className="mb-4 rounded-lg shadow-md"
-        />
-        <div className="bg-green-100 p-4 rounded-lg shadow-md">
-          <h3 className="font-bold mb-2">Work Better Together</h3>
-          <p className="text-sm text-gray-700">
-            Tasks in MeisterTask act as a central communication hub for all related files, links and discussions. Don’t lose the thread email.
-          </p>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
